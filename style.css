@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.gif-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -20%; /* Adjust this value to move the GIF up */
+}
+.gif {
+    width: 10%;
+    height: auto;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+    /* Optional: Add a little bit of animation to the button 
+    why is the animation not working?
+    also could we make them a little bigger, and the yes button gree, no can be red.*/
+    animation: pulse 1.5s infinite;
+
+
+}
+
+.yes-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.no-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}   
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* center and make the text bigger and beatiful*/
+.message-wrapper {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+.pic-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+.pic-wrapper img {
+    max-width: 20%; /* This will make the picture smaller */
+    height: auto; /* This will maintain the aspect ratio of the picture */
+}
+/* CSS */
+
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+.heart {
+    position: absolute;
+    animation: fall linear infinite;
+}
